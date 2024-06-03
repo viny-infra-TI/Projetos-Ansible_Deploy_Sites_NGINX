@@ -1,0 +1,17 @@
+---
+- name: Configuração do Nginx
+  hosts: servers-linux
+  become: yes
+  vars_files:
+      - /etc/ansible/nginx/vars/main.yml
+  
+  tasks:
+    - include_tasks: /etc/ansible/nginx/tasks/main.yml
+
+
+  handlers:
+    - include_tasks: /etc/ansible/nginx/handlers/main.yml
+
+...
+
+
